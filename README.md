@@ -1,2 +1,2 @@
 # hittheoffers
-web app 
+First web app - graduation project 
