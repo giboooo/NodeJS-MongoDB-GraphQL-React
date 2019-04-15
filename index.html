@@ -1,15 +1,145 @@
+<!-- 
+  header:
+  search bar  
+ -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+
+  <!-- CSS & google icons & fontawesome-->
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+  <title>Hit the offers</title>
 </head>
+  
 <body>
-  <h1>test</h1>
-  <h2>kolo tamam</h2>
-  <h3>git test</h3>
-  <script src="app.js"></script>
-</body>
-</html>
+  <!-- header -->
+  <header class="page-header">
+    <div class="navbar-fixed">
+      <nav class="light blue lighten-4">
+        <div class="nav">
+          
+          <!-- logo -->
+          <a href="#" class="brand-logo left">
+            <img class="circle sm logo" src="/assets/img/logo.png" alt="logo">
+          </a>
+          
+          <!-- search bar -->
+          
+          <ul class="right">
+            <li>
+                <div class="input-field autocomplete">
+                  <!-- <input id="search" type="search" class="validate "> -->
+                  <!-- <label for="search">Search</label> -->
+                </div>
+            </li>
+            <li>
+              <a href="#">
+                <i class="material-icons">search</i> 
+              </a>
+            </li>
+
+            <!-- shoping cart -->
+            <li>
+              <a href="#">
+                <i class="material-icons">shopping_cart</i>
+              </a>
+            </li>
+                
+            <!-- user -->
+            <li >
+              <div>
+                <a href="/views/user/profile.html">
+                  <i class="material-icons">person</i>
+                </a>
+                <div class="nav-content">
+                  <ul>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            
+            <!-- menu -->
+            <li>
+              <a class="dropdown-trigger" href="#" data-target="menuDrop">
+                <i class="material-icons">more_vert</i>
+              </a>
+            </li>
+
+            <!-- menuDrop -->
+            <ul id='menuDrop' class='dropdown-content'>
+              <li><a href="#!">one</a></li>
+              <li><a href="#!">two</a></li>
+              <li class="divider" tabindex="-1"></li>
+              <li><a href="#!">three</a></li>
+              <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
+              <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
+            </ul>
+          </ul>
+      </div>
+    </nav>
+  </div>
+</header>
+      
+      <!-- main -->
+      <main>
+        <div class="container">
+          <div class="row">
+            
+            <!-- products -->
+            <div class="col s12 m12 l9">
+              <div class= "col s12 m6 l6" >
+                <div class="card">
+                  <div class="card-image">
+                    <img src="/assets/img/sample-1.jpg">
+                    <span class="card-title">Card Title</span>
+                    <a class="btn-floating halfway-fab waves-effect waves-light red">
+                      <i class="material-icons">add</i>
+                    </a>
+                  </div>
+                  <div class="card-content">
+                    <p class="truncate">I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- payement -->
+            <div class="col s0 m0 l3">
+              
+            </div>
+          </div>
+          
+        </div>
+      </main>
+      
+      <!-- footer -->
+      <footer class="page-footer light blue lighten-4">
+        <div class="">
+          <div class="row">
+            <div class="col s8 m8 l8">
+              <p class="container">Lorem ipsum dolor sit amet consectetur adipisicing elit. A provident consequuntur, recusandae distinctio praesentium totam aut blanditiis, </p>
+            </div>
+            <div class="col s4 m4 l4">
+              <p class="container">copyright</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <!-- JavaScript -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+      <script src="/js/app.js"></script>
+  </div>
+  </body>
+  </html>
