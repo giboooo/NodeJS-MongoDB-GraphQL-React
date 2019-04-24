@@ -1,3 +1,10 @@
 .logo{
   padding: 4px;
 }
+
+/* table border ok but not th & td */
+#users-table, th, td{
+  border: 1px solid black;
+}
+
+  

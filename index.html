@@ -1,4 +1,4 @@
-<!-- 
+<!-- same as /views/index.html
   header:
   search bar  
  -->
@@ -21,125 +21,599 @@
   
 <body>
   <!-- header -->
-  <header class="page-header">
-    <div class="navbar-fixed">
-      <nav class="light blue lighten-4">
-        <div class="nav">
-          
-          <!-- logo -->
-          <a href="#" class="brand-logo left">
-            <img class="circle sm logo" src="/assets/img/logo.png" alt="logo">
+  <div id="header"></div>
+
+  <main>
+
+    <!-- products -->
+    <div class="container">
+      <div class="row">
+        <!-- card1 -->
+        <div class="col s12 m4 l3 offset-m1 offset-l1 card hoverable">
+        
+        <!-- title -->
+        <div class="row">
+          <a href="#" class="col left">
+            <p class="valign-wrapper">
+              <strong>TITLE</strong>
+            </p>
           </a>
-          
-          <!-- search bar -->
-          
-          <ul class="right">
-            <li>
-                <div class="input-field autocomplete">
-                  <!-- <input id="search" type="search" class="validate "> -->
-                  <!-- <label for="search">Search</label> -->
-                </div>
-            </li>
-            <li>
-              <a href="#">
-                <i class="material-icons">search</i> 
-              </a>
-            </li>
+        
+        <!-- price -->
+          <a href="#" class="col right">
+            <p class="valign-wrapper">
+              <strong>100$ 50%off</strong>
+            </p>
+          </a>
+        </div>  
 
-            <!-- shoping cart -->
-            <li>
-              <a href="#">
-                <i class="material-icons">shopping_cart</i>
-              </a>
-            </li>
-                
-            <!-- user -->
-            <li >
-              <div>
-                <a href="/views/user/profile.html">
-                  <i class="material-icons">person</i>
-                </a>
-                <div class="nav-content">
-                  <ul>
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
-                  </ul>
-                </div>
-              </div>
-            </li>
-            
-            <!-- menu -->
-            <li>
-              <a class="dropdown-trigger" href="#" data-target="menuDrop">
-                <i class="material-icons">more_vert</i>
-              </a>
-            </li>
+        <!-- image -->
+        <div class="row card-image">
+          <a href="/views/product/product.html">
+            <img src="/assets/img/sample-1.jpg">
+          </a>
+        
+          <!-- card title -->
+          <span class="card-title">Card Title</span>
+        
+          <!-- cart button -->
+          <a class="btn-floating halfway-fab waves-effect waves-light red" href="#">
+            <i class="material-icons">add_shopping_cart</i>
+          </a>
+        </div>
 
-            <!-- menuDrop -->
-            <ul id='menuDrop' class='dropdown-content'>
-              <li><a href="#!">one</a></li>
-              <li><a href="#!">two</a></li>
-              <li class="divider" tabindex="-1"></li>
-              <li><a href="#!">three</a></li>
-              <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
-              <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
+        <!-- card content -->
+        <div class=" row card-content">
+          <p class="truncate">I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.
+          </p>
+        </div>
+      
+        <!-- evaluation stars -->
+        <div class="row">
+          <a href="#">
+            <ul >
+              <li class="col s1">
+                <i class="material-icons">star</i>
+              </li>
+              <li class="col s1">
+                <i class="material-icons">star</i>
+              </li>
+              <li class="col s1">
+                <i class="material-icons">star</i>
+              </li>
+              <li class="col s1">
+                <i class="material-icons">star_half</i>
+              </li>
+              <li class="col s1">
+                <i class="material-icons">star_border</i>
+              </li>
+              <li class="col s1 offset-s1">4.5/5</li>
             </ul>
-          </ul>
-      </div>
-    </nav>
-  </div>
-</header>
-      
-      <!-- main -->
-      <main>
-        <div class="container">
-          <div class="row">
+          </a>
+        </div>
+        </div>
+        <!-- card2 -->
+        <div class="col s12 m4 l3 offset-m1 offset-l1 card hoverable">
+        
+            <!-- title -->
+            <div class="row">
+              <a href="#" class="col left">
+                <p class="valign-wrapper">
+                  <strong>TITLE</strong>
+                </p>
+              </a>
             
-            <!-- products -->
-            <div class="col s12 m12 l9">
-              <div class= "col s12 m6 l6" >
-                <div class="card">
-                  <div class="card-image">
-                    <img src="/assets/img/sample-1.jpg">
-                    <span class="card-title">Card Title</span>
-                    <a class="btn-floating halfway-fab waves-effect waves-light red">
-                      <i class="material-icons">add</i>
-                    </a>
-                  </div>
-                  <div class="card-content">
-                    <p class="truncate">I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <!-- price -->
+              <a href="#" class="col right">
+                <p class="valign-wrapper">
+                  <strong>100$ 50%off</strong>
+                </p>
+              </a>
+            </div>  
+    
+            <!-- image -->
+            <div class="row card-image">
+              <a href="/views/product/product.html">
+                <img src="/assets/img/sample-1.jpg">
+              </a>
             
-            <!-- payement -->
-            <div class="col s0 m0 l3">
-              
+              <!-- card title -->
+              <span class="card-title">Card Title</span>
+            
+              <!-- cart button -->
+              <a class="btn-floating halfway-fab waves-effect waves-light red" href="#">
+                <i class="material-icons">add_shopping_cart</i>
+              </a>
             </div>
-          </div>
+    
+            <!-- card content -->
+            <div class=" row card-content">
+              <p class="truncate">I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.
+              </p>
+            </div>
           
-        </div>
-      </main>
-      
-      <!-- footer -->
-      <footer class="page-footer light blue lighten-4">
-        <div class="">
-          <div class="row">
-            <div class="col s8 m8 l8">
-              <p class="container">Lorem ipsum dolor sit amet consectetur adipisicing elit. A provident consequuntur, recusandae distinctio praesentium totam aut blanditiis, </p>
+            <!-- evaluation stars -->
+            <div class="row">
+              <a href="#">
+                <ul >
+                  <li class="col s1">
+                    <i class="material-icons">star</i>
+                  </li>
+                  <li class="col s1">
+                    <i class="material-icons">star</i>
+                  </li>
+                  <li class="col s1">
+                    <i class="material-icons">star</i>
+                  </li>
+                  <li class="col s1">
+                    <i class="material-icons">star_half</i>
+                  </li>
+                  <li class="col s1">
+                    <i class="material-icons">star_border</i>
+                  </li>
+                  <li class="col s1 offset-s1">4.5/5</li>
+                </ul>
+              </a>
             </div>
-            <div class="col s4 m4 l4">
-              <p class="container">copyright</p>
-            </div>
-          </div>
         </div>
-      </footer>
 
-      <!-- JavaScript -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-      <script src="/js/app.js"></script>
-  </div>
-  </body>
-  </html>
+        <!-- card2 -->
+        <div class="col s12 m4 l3 offset-m1 offset-l1 card hoverable">
+        
+            <!-- title -->
+            <div class="row">
+              <a href="#" class="col left">
+                <p class="valign-wrapper">
+                  <strong>TITLE</strong>
+                </p>
+              </a>
+            
+            <!-- price -->
+              <a href="#" class="col right">
+                <p class="valign-wrapper">
+                  <strong>100$ 50%off</strong>
+                </p>
+              </a>
+            </div>  
+    
+            <!-- image -->
+            <div class="row card-image">
+              <a href="/views/product/product.html">
+                <img src="/assets/img/sample-1.jpg">
+              </a>
+            
+              <!-- card title -->
+              <span class="card-title">Card Title</span>
+            
+              <!-- cart button -->
+              <a class="btn-floating halfway-fab waves-effect waves-light red" href="#">
+                <i class="material-icons">add_shopping_cart</i>
+              </a>
+            </div>
+    
+            <!-- card content -->
+            <div class=" row card-content">
+              <p class="truncate">I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.
+              </p>
+            </div>
+          
+            <!-- evaluation stars -->
+            <div class="row">
+              <a href="#">
+                <ul >
+                  <li class="col s1">
+                    <i class="material-icons">star</i>
+                  </li>
+                  <li class="col s1">
+                    <i class="material-icons">star</i>
+                  </li>
+                  <li class="col s1">
+                    <i class="material-icons">star</i>
+                  </li>
+                  <li class="col s1">
+                    <i class="material-icons">star_half</i>
+                  </li>
+                  <li class="col s1">
+                    <i class="material-icons">star_border</i>
+                  </li>
+                  <li class="col s1 offset-s1">4.5/5</li>
+                </ul>
+              </a>
+            </div>
+        </div>
+        <!-- card3 -->
+        <div class="col s12 m4 l3 offset-m1 offset-l1 card hoverable">
+        
+            <!-- title -->
+            <div class="row">
+              <a href="#" class="col left">
+                <p class="valign-wrapper">
+                  <strong>TITLE</strong>
+                </p>
+              </a>
+            
+            <!-- price -->
+              <a href="#" class="col right">
+                <p class="valign-wrapper">
+                  <strong>100$ 50%off</strong>
+                </p>
+              </a>
+            </div>  
+    
+            <!-- image -->
+            <div class="row card-image">
+              <a href="/views/product/product.html">
+                <img src="/assets/img/sample-1.jpg">
+              </a>
+            
+              <!-- card title -->
+              <span class="card-title">Card Title</span>
+            
+              <!-- cart button -->
+              <a class="btn-floating halfway-fab waves-effect waves-light red" href="#">
+                <i class="material-icons">add_shopping_cart</i>
+              </a>
+            </div>
+    
+            <!-- card content -->
+            <div class=" row card-content">
+              <p class="truncate">I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.
+              </p>
+            </div>
+          
+            <!-- evaluation stars -->
+            <div class="row">
+              <a href="#">
+                <ul >
+                  <li class="col s1">
+                    <i class="material-icons">star</i>
+                  </li>
+                  <li class="col s1">
+                    <i class="material-icons">star</i>
+                  </li>
+                  <li class="col s1">
+                    <i class="material-icons">star</i>
+                  </li>
+                  <li class="col s1">
+                    <i class="material-icons">star_half</i>
+                  </li>
+                  <li class="col s1">
+                    <i class="material-icons">star_border</i>
+                  </li>
+                  <li class="col s1 offset-s1">4.5/5</li>
+                </ul>
+              </a>
+            </div>
+        </div><!-- card4 -->
+        <div class="col s12 m4 l3 offset-m1 offset-l1 card hoverable">
+        
+            <!-- title -->
+            <div class="row">
+              <a href="#" class="col left">
+                <p class="valign-wrapper">
+                  <strong>TITLE</strong>
+                </p>
+              </a>
+            
+            <!-- price -->
+              <a href="#" class="col right">
+                <p class="valign-wrapper">
+                  <strong>100$ 50%off</strong>
+                </p>
+              </a>
+            </div>  
+    
+            <!-- image -->
+            <div class="row card-image">
+              <a href="/views/product/product.html">
+                <img src="/assets/img/sample-1.jpg">
+              </a>
+            
+              <!-- card title -->
+              <span class="card-title">Card Title</span>
+            
+              <!-- cart button -->
+              <a class="btn-floating halfway-fab waves-effect waves-light red" href="#">
+                <i class="material-icons">add_shopping_cart</i>
+              </a>
+            </div>
+    
+            <!-- card content -->
+            <div class=" row card-content">
+              <p class="truncate">I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.
+              </p>
+            </div>
+          
+            <!-- evaluation stars -->
+            <div class="row">
+              <a href="#">
+                <ul >
+                  <li class="col s1">
+                    <i class="material-icons">star</i>
+                  </li>
+                  <li class="col s1">
+                    <i class="material-icons">star</i>
+                  </li>
+                  <li class="col s1">
+                    <i class="material-icons">star</i>
+                  </li>
+                  <li class="col s1">
+                    <i class="material-icons">star_half</i>
+                  </li>
+                  <li class="col s1">
+                    <i class="material-icons">star_border</i>
+                  </li>
+                  <li class="col s1 offset-s1">4.5/5</li>
+                </ul>
+              </a>
+            </div>
+        </div><!-- card5 -->
+        <div class="col s12 m4 l3 offset-m1 offset-l1 card hoverable">
+        
+            <!-- title -->
+            <div class="row">
+              <a href="#" class="col left">
+                <p class="valign-wrapper">
+                  <strong>TITLE</strong>
+                </p>
+              </a>
+            
+            <!-- price -->
+              <a href="#" class="col right">
+                <p class="valign-wrapper">
+                  <strong>100$ 50%off</strong>
+                </p>
+              </a>
+            </div>  
+    
+            <!-- image -->
+            <div class="row card-image">
+              <a href="/views/product/product.html">
+                <img src="/assets/img/sample-1.jpg">
+              </a>
+            
+              <!-- card title -->
+              <span class="card-title">Card Title</span>
+            
+              <!-- cart button -->
+              <a class="btn-floating halfway-fab waves-effect waves-light red" href="#">
+                <i class="material-icons">add_shopping_cart</i>
+              </a>
+            </div>
+    
+            <!-- card content -->
+            <div class=" row card-content">
+              <p class="truncate">I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.
+              </p>
+            </div>
+          
+            <!-- evaluation stars -->
+            <div class="row">
+              <a href="#">
+                <ul >
+                  <li class="col s1">
+                    <i class="material-icons">star</i>
+                  </li>
+                  <li class="col s1">
+                    <i class="material-icons">star</i>
+                  </li>
+                  <li class="col s1">
+                    <i class="material-icons">star</i>
+                  </li>
+                  <li class="col s1">
+                    <i class="material-icons">star_half</i>
+                  </li>
+                  <li class="col s1">
+                    <i class="material-icons">star_border</i>
+                  </li>
+                  <li class="col s1 offset-s1">4.5/5</li>
+                </ul>
+              </a>
+            </div>
+        </div><!-- card6 -->
+        <div class="col s12 m4 l3 offset-m1 offset-l1 card hoverable">
+        
+            <!-- title -->
+            <div class="row">
+              <a href="#" class="col left">
+                <p class="valign-wrapper">
+                  <strong>TITLE</strong>
+                </p>
+              </a>
+            
+            <!-- price -->
+              <a href="#" class="col right">
+                <p class="valign-wrapper">
+                  <strong>100$ 50%off</strong>
+                </p>
+              </a>
+            </div>  
+    
+            <!-- image -->
+            <div class="row card-image">
+              <a href="/views/product/product.html">
+                <img src="/assets/img/sample-1.jpg">
+              </a>
+            
+              <!-- card title -->
+              <span class="card-title">Card Title</span>
+            
+              <!-- cart button -->
+              <a class="btn-floating halfway-fab waves-effect waves-light red" href="#">
+                <i class="material-icons">add_shopping_cart</i>
+              </a>
+            </div>
+    
+            <!-- card content -->
+            <div class=" row card-content">
+              <p class="truncate">I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.
+              </p>
+            </div>
+          
+            <!-- evaluation stars -->
+            <div class="row">
+              <a href="#">
+                <ul >
+                  <li class="col s1">
+                    <i class="material-icons">star</i>
+                  </li>
+                  <li class="col s1">
+                    <i class="material-icons">star</i>
+                  </li>
+                  <li class="col s1">
+                    <i class="material-icons">star</i>
+                  </li>
+                  <li class="col s1">
+                    <i class="material-icons">star_half</i>
+                  </li>
+                  <li class="col s1">
+                    <i class="material-icons">star_border</i>
+                  </li>
+                  <li class="col s1 offset-s1">4.5/5</li>
+                </ul>
+              </a>
+            </div>
+        </div><!-- card7 -->
+        <div class="col s12 m4 l3 offset-m1 offset-l1 card hoverable">
+        
+            <!-- title -->
+            <div class="row">
+              <a href="#" class="col left">
+                <p class="valign-wrapper">
+                  <strong>TITLE</strong>
+                </p>
+              </a>
+            
+            <!-- price -->
+              <a href="#" class="col right">
+                <p class="valign-wrapper">
+                  <strong>100$ 50%off</strong>
+                </p>
+              </a>
+            </div>  
+    
+            <!-- image -->
+            <div class="row card-image">
+              <a href="/views/product/product.html">
+                <img src="/assets/img/sample-1.jpg">
+              </a>
+            
+              <!-- card title -->
+              <span class="card-title">Card Title</span>
+            
+              <!-- cart button -->
+              <a class="btn-floating halfway-fab waves-effect waves-light red" href="#">
+                <i class="material-icons">add_shopping_cart</i>
+              </a>
+            </div>
+    
+            <!-- card content -->
+            <div class=" row card-content">
+              <p class="truncate">I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.
+              </p>
+            </div>
+          
+            <!-- evaluation stars -->
+            <div class="row">
+              <a href="#">
+                <ul >
+                  <li class="col s1">
+                    <i class="material-icons">star</i>
+                  </li>
+                  <li class="col s1">
+                    <i class="material-icons">star</i>
+                  </li>
+                  <li class="col s1">
+                    <i class="material-icons">star</i>
+                  </li>
+                  <li class="col s1">
+                    <i class="material-icons">star_half</i>
+                  </li>
+                  <li class="col s1">
+                    <i class="material-icons">star_border</i>
+                  </li>
+                  <li class="col s1 offset-s1">4.5/5</li>
+                </ul>
+              </a>
+            </div>
+        </div><!-- card8 -->
+        <div class="col s12 m4 l3 offset-m1 offset-l1 card hoverable">
+        
+            <!-- title -->
+            <div class="row">
+              <a href="#" class="col left">
+                <p class="valign-wrapper">
+                  <strong>TITLE</strong>
+                </p>
+              </a>
+            
+            <!-- price -->
+              <a href="#" class="col right">
+                <p class="valign-wrapper">
+                  <strong>100$ 50%off</strong>
+                </p>
+              </a>
+            </div>  
+    
+            <!-- image -->
+            <div class="row card-image">
+              <a href="/views/product/product.html">
+                <img src="/assets/img/sample-1.jpg">
+              </a>
+            
+              <!-- card title -->
+              <span class="card-title">Card Title</span>
+            
+              <!-- cart button -->
+              <a class="btn-floating halfway-fab waves-effect waves-light red" href="#">
+                <i class="material-icons">add_shopping_cart</i>
+              </a>
+            </div>
+    
+            <!-- card content -->
+            <div class=" row card-content">
+              <p class="truncate">I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.
+              </p>
+            </div>
+          
+            <!-- evaluation stars -->
+            <div class="row">
+              <a href="#">
+                <ul >
+                  <li class="col s1">
+                    <i class="material-icons">star</i>
+                  </li>
+                  <li class="col s1">
+                    <i class="material-icons">star</i>
+                  </li>
+                  <li class="col s1">
+                    <i class="material-icons">star</i>
+                  </li>
+                  <li class="col s1">
+                    <i class="material-icons">star_half</i>
+                  </li>
+                  <li class="col s1">
+                    <i class="material-icons">star_border</i>
+                  </li>
+                  <li class="col s1 offset-s1">4.5/5</li>
+                </ul>
+              </a>
+            </div>
+        </div>
+      
+      <!-- end row -->
+      </div>
+    <!-- end container -->
+    </div>  
+  </main>
+
+  <!-- footer -->
+  <div id="footer"></div>
+
+  <!-- JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="/js/app.js"></script>
+  <script src="/views/inc/header.js"></script> 
+  <script src="/views/inc/footer.js"></script>
+</body>
+</html>
