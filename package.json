@@ -1,0 +1,28 @@
+{
+  "name": "hittheoffers",
+  "version": "1.0.0",
+  "description": "First web app - graduation project",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/giboooo/hittheoffers.git"
+  },
+  "author": "giboooo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/giboooo/hittheoffers/issues"
+  },
+  "homepage": "https://github.com/giboooo/hittheoffers#readme",
+  "dependencies": {
+    "koa": "^2.7.0",
+    "koa-bodyparser": "^4.2.1",
+    "koa-ejs": "^4.2.0",
+    "koa-router": "^7.4.0"
+  }
+}

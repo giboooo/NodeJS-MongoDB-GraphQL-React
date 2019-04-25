@@ -1,65 +1,63 @@
-const http = require('http')
-const fs = require('fs')
+const Koa = require('koa')
+const Router = require('koa-router')
 const path = require('path')
+const render = require('koa-ejs')
+const bodyParser = require('koa-bodyparser')
+
+const app = new Koa()
+const router = new Router()
+
+// bodyparser middleware
+app.use(bodyParser())
+// database comes here
+// const things = [toto,tata,titi]
 
 
-// create server
-const server = http.createServer((req, res) => {
-  // build the path
-  let filePath = path.join(
-    __dirname,
-    'views',
-    req.url === '/' ? 'index.html' : req.url)
-  
-  // extension of file
-  let extname = path.extname(filePath)
-
-  // initial content type
-  let contentType = 'text/html'
-
-  // check ext and set content type
-  switch (extname){
-    case '.js':
-      contentType = 'text/javascript'
-      break
-    case '.css':
-      contentType = 'text/css'
-      break
-    case '.json':
-      contentType = 'application/json'
-      break
-    case '.png':
-      contentType = 'image/png'
-      break
-    case '.jpg':
-      contentType = 'image/jpg'
-      break
-  }
-  // read file
-  fs.readFile(filePath, (err, content) => {
-    if (err){
-      if (err.code == 'ENOENT'){
-        // page not found 404
-        fs.readFile(path.join(__dirname,
-          'views',
-          '404.html'),
-          (err, content)=> {
-            res.writeHead(200, {'contet-Type' : 'text/html'})
-            res.end(content, 'utf8')
-          })
-      } else {
-        // server error 500
-        res.writeHead(500)
-        res.end(`server error : ${err.code}`)
-      }
-    } else {
-      // success 200
-      res.writeHead(200, {'content-Type' : contentType})
-      res.end(content, 'utf8')
-    }
-  })
+// render
+render(app, {
+  root: path.join(__dirname, 'views'),
+  layout : 'layout',
+  viewExt: 'html',
+  cache: false,
+  debug: true
 })
 
-const PORT = process.env.PORT || 5000
 
-server.listen(PORT, ()=> console.log(`server running on port ${PORT}`))
+// routes
+router.get('/', index)
+router.get('/userProfile', userProfile)
+
+
+router.get('/add', showAdd)
+router.post('/add', add)
+
+// index function
+async function index(ctx){
+  await ctx.render('index')
+}
+
+// userProfile function
+async function userProfile(ctx){
+  await ctx.render('/user/profile')
+}
+
+// showAdd fuction
+async function showAdd(ctx) {
+  await ctx.render('add')
+}
+// add function
+async function add(ctx) {
+  const body = ctx.request.body
+  things.push(body.thing)
+  ctx.redirect('/')
+}
+
+
+
+// router middleware
+app
+  .use(router.routes())
+  .use(router.allowedMethods())
+
+
+app.listen(3000, console.log('server runnig'))

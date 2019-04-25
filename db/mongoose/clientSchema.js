@@ -5,7 +5,8 @@ const ClientSchema = new Schema({
   productIds: [{
     productId: Number
   }],
-  history: [{
+  invoices: [{
+    
     
 
   }]
