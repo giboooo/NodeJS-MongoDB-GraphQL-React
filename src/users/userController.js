@@ -1,4 +1,4 @@
-const User = require('../db/mongoose/userSchema')
+const User = require('./userSchema')
 
 
 // create
