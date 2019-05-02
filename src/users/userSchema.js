@@ -1,29 +1,36 @@
-const mongoose = require('mongoose')
+import mongoose from 'mongoose'
+
 const Schema = mongoose.Schema
+const ObjectId = Schema.Types.ObjectId
 
 const UserSchema = new Schema({
-  name: {
-    firstName: String,
-    lastName: String
-  },
+  name:  String,
   email: String,
-  pwd: String,
-  role: Number,
-  siretNum: Number,
-  address: String,
-  payMethod :{
-    name: String,
-    cardNum: Number,
-    expDate: Date
+  
+  info: {
+    type: ObjectId,
+    ref: 'user'
   },
-  history: [{
-    productId : Number,
-    purchaseDate : Date,
-    comments: {
-      evaluations: Number,
-      opinion: String
+  
+  meta: {
+    createdAt:{
+      type: Date,
+      default: Date.now()
+    },
+    updatedAt: {
+      type: Date,
+      default: Date.now()
     }
-  }]
+  }
 })
 
-module.exports = UserSchema
+UserSchema.pre('save', (next) => {
+  if(this.isNew){
+    this.meta.createdAt = this.meta.updatedAt = Date.now()
+  } else {
+    this.meta.updatedAt = Date.now()
+  }
+  next()
+})
+
+mongoose.model('User', UserSchema)

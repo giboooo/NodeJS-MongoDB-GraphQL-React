@@ -1,49 +1,38 @@
-const User = require('./userSchema')
+import mongoose from 'mongoose'
 
+const User = mongoose.model('User')
 
-// create
-exports.createUser = async (ctx) => {
-  const result = await User.create({
-    name: ctx.request.body.name,
-    email : ctx.request.body.email
-  })
-  if (!result) {
-    throw new Error('user creation failed')
+// saveUser 
+export const saveUser = async (ctx) => {
+  const opts = ctx.request.body
+
+  const user = new User(opts)
+  const saveUser = await user.save()
+
+  if (saveUser) {
+    ctx.body = {
+      success: true,
+      data: saveUser
+    }
   } else {
-    ctx.body = {message: 'user created', data: result}
+    ctx.body = {
+      success: false
+    }
   }
 }
 
-// read
-exports.getUsers = async (ctx) => {
+// fetchUser
+export const fetchUser = async (ctx) => {
   const users = await User.find({})
-  if (!users) {
-    throw new Error("error retrieving data")
-  } else {
-    ctx.body = users
-  }
-} 
 
-// update
-exports.updateUser = async (ctx) => {
-  const searchByName = {name: ctx.request.ody.name}
-  const update = {name: ctx.request.body.newName, email: ctx.request.body.newEmail}
-  const result = await User.findOneAndUpdate(searchByName, update)
-  if (!result) {
-    throw new Error('User not updated')
+  if(users.length){
+    ctx.body = {
+      success: true,
+      data: users
+    }
   } else {
-    console.log(result)
-    ctx.body = {message: 'user updated', data: result}
-  }
-}
-
-// delete
-exports.deleteUser = async (ctx) => {
-  const result = await User.findOneAndRemove({name: ctx.request.body.name})
-  if (!result) {
-    throw new Error('User not deleted')
-  } else {
-    ctx.status = 200
-    ctx.body = {message: 'user deleted'}
+    ctx.body = {
+      success: false
+    }
   }
 }

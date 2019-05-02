@@ -1,17 +1,36 @@
-const Koa = require('koa')
+// old (server + database + router)
+
+
+// server
+const Koa = require('koa') 
+
+// router
 const Router = require('koa-router')
 const path = require('path')
 const render = require('koa-ejs')
 const bodyParser = require('koa-bodyparser')
 
+// database
+const initDB = require('./database/mongoose')
+const graphqlHTTP = require('koa-graphql')
+const mount = require('koa-mount')
+const schema = require('./database/schema')
+
+// server
 const app = new Koa()
+// router
 const router = new Router()
+// database
+initDB()
 
 // bodyparser middleware
 app.use(bodyParser())
-// database comes here
-// const things = [toto,tata,titi]
 
+// database 
+app.use(mount('/graphql', graphqlHTTP({
+  schema: schema,
+  graphiql: true
+})))
 
 // render
 render(app, {
@@ -70,5 +89,9 @@ async function add(ctx) {
 app.use(router.routes())
 app.use(router.allowedMethods())
 
-
+// server
 app.listen(3000, console.log('server runnig'))
+// server error
+app.on('error', err => {
+  log.error('server error', err)
+})
