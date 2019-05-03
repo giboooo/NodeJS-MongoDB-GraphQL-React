@@ -11,7 +11,7 @@ const render = require('koa-ejs')
 const bodyParser = require('koa-bodyparser')
 
 // database
-const initDB = require('./database/mongoose')
+const initDB = require('./src/database/mongoose-old')
 const graphqlHTTP = require('koa-graphql')
 const mount = require('koa-mount')
 const schema = require('./database/schema')

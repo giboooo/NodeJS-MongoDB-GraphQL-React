@@ -1,10 +1,16 @@
-import {graphqlKoa, graphiqlKoa} from 'graphql-server-koa'
+// import {graphqlKoa, graphiqlKoa} from 'apollo-server-koa' 
+const {graphqlKoa, graphiqlKoa} = require('apollo-server-koa') 
 
-import {saveUser, fetchUser} from '../users/userController.js'
-import {saveProduct, fetchProduct} from '../products/productContorller.js'
-import {saveSupplier, fetchSupplier} from '../suppliers/supplierController.js'
+// import {saveUser, fetchUser} from '../users/userController.js'
+// import {saveProduct, fetchProduct} from '../products/productContorller.js'
+// import {saveSupplier, fetchSupplier} from '../suppliers/supplierController.js'
 
-import schema from '../database/graphql.js'
+const {saveUser, fetchUser} = require('../users/userController.js')
+const {saveProduct, fetchProduct} = require('../products/productContorller.js')
+const {saveSupplier, fetchSupplier} = require('../suppliers/supplierController.js')
+
+// import schema from '../database/graphql.js'
+const schema = require('../database/graphql.js')
 
 const Router = require('koa-router')
 const router = new Router()
@@ -38,7 +44,5 @@ module.exports = router
 
 
 /**
- * npm i graphql-server-koa
- * 
  * TODO optimization: separate router into different file
  */

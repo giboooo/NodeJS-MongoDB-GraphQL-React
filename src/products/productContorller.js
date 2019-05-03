@@ -1,9 +1,11 @@
-import mongoose from 'mongoose'
+// import mongoose from 'mongoose'
+const mongoose = require('mongoose')
 
 const Product = mongoose.model('Product')
 
 // saveProduct 
-export const saveProduct = async (ctx) => {
+// export 
+const saveProduct = async (ctx) => {
   const opts = ctx.request.body
 
   const product = new Product(opts)
@@ -22,7 +24,8 @@ export const saveProduct = async (ctx) => {
 }
 
 // fetchProduct
-export const fetchProduct = async (ctx) => {
+// export 
+const fetchProduct = async (ctx) => {
   const products = await product.find({})
 
   if(products.length){
@@ -36,3 +39,5 @@ export const fetchProduct = async (ctx) => {
     }
   }
 }
+
+module.exports = {saveProduct, fetchProduct}

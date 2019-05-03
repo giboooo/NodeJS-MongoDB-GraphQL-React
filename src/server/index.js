@@ -1,9 +1,14 @@
-import Koa from 'koa'
-import KoaStatic from 'koa-static' //$ npm install koa-static
-import Router from 'koa-router' 
-import bodyParser from 'koa-bodyparser'
+// import Koa from 'koa'
+// import KoaStatic from 'koa-static'
+// import Router from 'koa-router' 
+// import bodyParser from 'koa-bodyparser'
 
-require('../database/mongodb')
+const Koa = require('koa')
+const KoaStatic = require('koa-static') 
+const Router = require('koa-router')  
+const bodyParser = require('koa-bodyparser') 
+
+require('../database/mongoose.js')
 
 const GraphqlRouter = require('../router/index.js')
 

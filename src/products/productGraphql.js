@@ -1,4 +1,16 @@
-import {
+// import {
+//   graphql,
+//   GraphQLID,
+//   GraphQLInt,
+//   GraphQLList,
+//   GraphQLNonNull,
+//   GraphQLObjectType,
+//   GraphQLSchema,
+//   GraphQLString,
+//   isOutputType
+// } from 'graphql'
+
+const {
   graphql,
   GraphQLID,
   GraphQLInt,
@@ -8,9 +20,10 @@ import {
   GraphQLSchema,
   GraphQLString,
   isOutputType
-} from 'graphql'
+} = require('graphql')
 
-import mongoose from 'mongoose'
+// import mongoose from 'mongoose'
+const mongoose = require('mongoose')
 const Product = mongoose.model('Product')
 
 // const parameterType = new GraphQLObjectType({
@@ -39,7 +52,8 @@ const objType = new GraphQLObjectType({
   }
 })
 
-export let ProductType = new GraphQLObjectType({
+// export 
+let ProductType = new GraphQLObjectType({
   name: 'Product',
   fields: {
     _id: {
@@ -58,7 +72,8 @@ export let ProductType = new GraphQLObjectType({
   // }
 })
 
-export const products = {
+// export 
+const products = {
   type: new GraphQLList(ProductType),
   args: {},
   resolve(root, params, options) {
@@ -66,7 +81,8 @@ export const products = {
   }
 }
 
-export const product = {
+// export 
+const product = {
   type: ProductType,
   args: {
     id: {
@@ -80,3 +96,5 @@ export const product = {
     }).exec()
   }
 }
+
+module.exports = {ProductType, product, products}

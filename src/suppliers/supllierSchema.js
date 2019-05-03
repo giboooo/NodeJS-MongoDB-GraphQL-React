@@ -1,4 +1,5 @@
-import mongoose from 'mongoose'
+// import mongoose from 'mongoose'
+const mongoose = require('mongoose')
 
 const Schema = mongoose.Schema
 const ObjectId = Schema.Types.ObjectId
@@ -33,4 +34,4 @@ supplierSchema.pre('save', (next) => {
   next()
 })
 
-mongoose.model('supplier', supplierSchema)
+mongoose.model('Supplier', supplierSchema)

@@ -2,7 +2,7 @@
   "name": "hittheoffers",
   "version": "1.0.0",
   "description": "First web app - graduation project",
-  "main": "index.js",
+  "main": "start.js",
   "directories": {
     "lib": "lib"
   },
@@ -20,9 +20,17 @@
   },
   "homepage": "https://github.com/giboooo/hittheoffers#readme",
   "dependencies": {
+    "apollo-server-koa": "^2.4.8",
+    "babel-core": "^6.26.3",
+    "babel-polyfill": "^6.26.0",
+    "graphql": "^14.2.1",
+    "graphql-extensions": "^0.5.7",
     "koa": "^2.7.0",
     "koa-bodyparser": "^4.2.1",
     "koa-ejs": "^4.2.0",
-    "koa-router": "^7.4.0"
+    "koa-router": "^7.4.0",
+    "koa-static": "^5.0.0",
+    "mongodb": "^3.2.3",
+    "mongoose": "^5.5.5"
   }
 }
