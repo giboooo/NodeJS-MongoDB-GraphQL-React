@@ -1,4 +1,4 @@
-// export default
+// export defaultz
 module.exports = {
   dbPath: 'mongodb://localhost/graphql'
 }

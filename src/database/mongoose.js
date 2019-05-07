@@ -1,3 +1,5 @@
+// // required by server/index.js
+
 // import mongoose from 'mongoose'
 // import config from '../config/index.js'
 

@@ -6,8 +6,8 @@ const {GraphQLSchema, GraphQLObjectType} = require('graphql')
 // import {supplier} from '../suppliers/supplierGraphql.js'
 
 const {product, products} = require( '../products/productGraphql.js')
-const {user} = require( '../users/userGraphql.js')
 const {supplier} = require( '../suppliers/supplierGraphql.js')
+const {user} = require( '../users/userGraphql.js')
 
 // NOK even with ES5
 // export default new GraphQLSchema({
