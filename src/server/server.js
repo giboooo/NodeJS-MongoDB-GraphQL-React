@@ -4,10 +4,17 @@ const Router = require('koa-router')
 const bodyParser = require('koa-bodyparser')
 const path = require('path')
 const serve = require('koa-static')
+const mount = require('koa-mount')
+const graphqlHTTP = require('koa-graphql')
+
+// const { graphqlKoa, graphiqlKoa } = require('apollo-server-koa')
 
 require('../database/mongoose.js')
+const schema = require('../database/graphql.js')
 
-const GraphqlRouter = require('../router/router.js')
+// // TEST  
+// const GraphqlRouter = require('../router/router3.js')
+// const GraphqlRouter = require('../router/router.js')
 
 // create http server, router
 const app = new Koa()
@@ -18,7 +25,7 @@ const port = process.env.PORT || 4000
 // bodyparser middleware
 app.use(bodyParser())
 
-// static middleware
+// static files middleware (serving image)
 app.use(serve('.'))
 
 // render
@@ -35,6 +42,23 @@ router.get('/', index)
 router.get('/search', search)
 router.get('/cart', cart)
 router.get('/menu', menu)
+
+// router.post('/graphql', graphqlKoa({ schema: schema }))
+// router.get('/graphql', graphqlKoa({ schema: schema }))
+// router.get('/graphiql', graphiqlKoa({ endpointURL: '/graphql' }))
+
+// graphql router
+// router.post('/graphql', async (ctx, next) => {
+//   await graphqlKoa({schema: schema})(ctx, next)
+// })
+// router.get('/graphql', async (ctx, next) => {
+//   await graphqlKoa({schema: schema})(ctx, next)
+// })
+// router.get('/graphiql', async (ctx, next) => {
+//   await graphiqlKoa({endpointURL: '/graphql'})(ctx, next)
+// })
+
+
 
 // index function
 async function index(ctx){
@@ -55,7 +79,13 @@ async function menu(ctx){
 }
 
 // graphQL routes
-router.use('', GraphqlRouter.routes)
+// router.use('', GraphqlRouter.routes())
+
+app.use(mount('/graphql', graphqlHTTP({
+  schema: schema,
+  graphiql: true
+})))
+
 
 // router middleware
 app.use(router.routes())

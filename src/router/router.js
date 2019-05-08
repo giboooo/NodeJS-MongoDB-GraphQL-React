@@ -1,8 +1,8 @@
-const {graphqlKoa, graphiqlKoa} = require('apollo-server-koa') 
+const { graphqlKoa, graphiqlKoa } = require('apollo-server-koa') 
 
-const {saveProduct, fetchProduct} = require('../products/productContorller.js')
-const {saveSupplier, fetchSupplier} = require('../suppliers/supplierController.js')
-const {saveUser, fetchUser} = require('../users/userController.js')
+const { saveProduct, fetchProduct } = require('../products/productContorller.js')
+const { saveSupplier, fetchSupplier } = require('../suppliers/supplierController.js')
+const { saveUser, fetchUser } = require('../users/userController.js')
 
 const schema = require('../database/graphql.js')
 
@@ -24,15 +24,15 @@ router.get('/supplier', fetchSupplier)
 
 
 // graphQL router
-router.post('graphql', async (ctx, next) => {
-  await graphqlKoa({schema: schema})(ctx, next)
-})
-router.get('/graphql', async (ctx,next) => {
-  await graphqlKoa({schema: schema})(ctx, next)
-})
-router.get('/graphiql', async (ctx,next) => {
-  await graphiqlKoa({endpointURL: 'graphql'})(ctx, next)
-})
+router.post('/graphql', async (ctx, next) => {
+        await graphqlKoa({schema: schema})(ctx, next)
+      })
+      .get('/graphql', async (ctx, next) => {
+        await graphqlKoa({schema: schema})(ctx, next)
+      })
+      .get('/graphiql', async (ctx, next) => {
+        await graphiqlKoa({endpointURL: '/graphql'})(ctx, next)
+      })
 
 module.exports = router
 
