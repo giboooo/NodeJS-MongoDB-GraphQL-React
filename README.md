@@ -1,18 +1,9 @@
 # hittheoffers
 First web app - graduation project 
-psedudocode
 
-> first process
-  if ok then display user info & display homepage with all products
-  else display homepage 
 
+TODO
   auth process
-  check for auth & return user
+  admin
+  login (google + facebook)
 
-  homepage process
-  connect to server & db
-  get all products
-
-  > login process
-  >admin process
-  
