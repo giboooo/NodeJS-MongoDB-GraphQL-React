@@ -6,13 +6,16 @@ const Router = require('koa-router')
 const serve = require('koa-static')
 const path = require('path')
 
-// database
+// database connexion
 require('../database/mongoose.js')
+
+// graphql
 const graphqlHTTP = require('koa-graphql')
 const schema = require('../database/graphql.js')
 
-// router
-const GraphqlRouter = require('../router/router2.js')
+// routers
+const GraphqlRouter = require('../router/router.js')
+const UserRouter = require('../users/userRouter.js')
 
 // init http server, router
 const app = new Koa()
@@ -35,8 +38,9 @@ render(app, {
   debug: true
 })
 
-// router routes
+// routing
 router.use('', GraphqlRouter.routes())
+router.use('', UserRouter.routes())
 
 // graphql
 app.use(mount('/graphql', graphqlHTTP({
@@ -48,7 +52,7 @@ app.use(mount('/graphql', graphqlHTTP({
 app.use(router.routes())
 app.use(router.allowedMethods())
 
-// connexion
+// server connexion
 app.listen(port, console.log(`server running on port: ${port}`))
 
 // error

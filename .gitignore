@@ -1,3 +1,5 @@
 aa--dev/*
 node_modules/*
 .vscode/*
+
+.eslintrc.js

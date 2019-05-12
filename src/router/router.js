@@ -1,83 +1,32 @@
-// const { graphqlKoa, graphiqlKoa } = require('apollo-server-koa') 
+const router = require('koa-router')()
 
-const { saveProduct, fetchProduct } = require('../products/productContorller.js')
-const { saveSupplier, fetchSupplier } = require('../suppliers/supplierController.js')
-const { saveUser, fetchUser } = require('../users/userController.js')
+// routes
+router.get('/', index)
+router.get('/search', search)
+router.get('/cart', cart)
+router.get('/menu', menu)
+router.get('/admin', admin)
 
-// const schema = require('../database/graphql.js')
+// index function
+async function index(ctx){
+  await ctx.render('index')
+}
 
-// const Router = require('koa-router')
-// const router = new Router()
-
-// user router
-router.post('/saveUser', saveUser)
-router.get('/user', fetchUser)
-
-// product router
-router.post('/saveProduct', saveProduct)
-router.get('/product', fetchProduct)
-
-// supplier router
-router.post('/saveSupplier', saveSupplier)
-router.get('/supplier', fetchSupplier)
-
-
-
-// graphQL router
-// router.post('/graphql', async (ctx, next) => {
-//         await graphqlKoa({schema: schema})(ctx, next)
-//       })
-//       .get('/graphql', async (ctx, next) => {
-//         await graphqlKoa({schema: schema})(ctx, next)
-//       })// const { graphqlKoa, graphiqlKoa } = require('apollo-server-koa') 
-
-const { saveProduct, fetchProduct } = require('../products/productContorller.js')
-const { saveSupplier, fetchSupplier } = require('../suppliers/supplierController.js')
-const { saveUser, fetchUser } = require('../users/userController.js')
-
-// const schema = require('../database/graphql.js')
-
-// const Router = require('koa-router')
-// const router = new Router()
-
-// user router
-router.post('/saveUser', saveUser)
-router.get('/user', fetchUser)
-
-// product router
-router.post('/saveProduct', saveProduct)
-router.get('/product', fetchProduct)
-
-// supplier router
-router.post('/saveSupplier', saveSupplier)
-router.get('/supplier', fetchSupplier)
-
-
-
-// graphQL router
-// router.post('/graphql', async (ctx, next) => {
-//         await graphqlKoa({schema: schema})(ctx, next)
-//       })
-//       .get('/graphql', async (ctx, next) => {
-//         await graphqlKoa({schema: schema})(ctx, next)
-//       })
-//       .get('/graphiql', async (ctx, next) => {
-//         await graphiqlKoa({endpointURL: '/graphql'})(ctx, next)
-//       })
+// search function
+async function search(ctx){
+  await ctx.render('search')
+}
+// cart function
+async function cart(ctx){
+  await ctx.render('cart')
+}
+// menu function
+async function menu(ctx){
+  await ctx.render('menu')
+}
+// admin function
+async function admin(ctx){
+  await ctx.render('admin')
+}
 
 module.exports = router
-
-
-/**
- * TODO optimization: separate router into different file
- */
-//       .get('/graphiql', async (ctx, next) => {
-//         await graphiqlKoa({endpointURL: '/graphql'})(ctx, next)
-//       })
-
-module.exports = router
-
-
-/**
- * TODO optimization: separate router into different file
- */

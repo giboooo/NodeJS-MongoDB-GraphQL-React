@@ -1,4 +1,3 @@
-console.log("gibo.app")
 
 // window.onload = () => {
 

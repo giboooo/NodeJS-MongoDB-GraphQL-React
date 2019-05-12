@@ -34,5 +34,7 @@
     "mongodb": "^3.2.3",
     "mongoose": "^5.5.5"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "eslint": "^5.16.0"
+  }
 }
