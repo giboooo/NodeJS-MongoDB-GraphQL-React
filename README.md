@@ -6,7 +6,7 @@ TODO
   docker
   cloud
   
-  change the database name
+  change the database name (test or graphql)
   auth process
   admin
   login (google + facebook)

@@ -3,10 +3,10 @@ const router = new Router()
 
 // routes
 router.get('/', index)
-router.get('/search', search)
+router.get('/admin', admin)
 router.get('/cart', cart)
 router.get('/menu', menu)
-router.get('/admin', admin)
+router.get('/search', search)
 
 // index function
 async function index(ctx){

@@ -7,15 +7,17 @@ import serve from 'koa-static'
 import path from 'path'
 
 // database connexion
-require('../database/mongoose.js')
+import '../database/mongoose'
 
 // graphql
 import graphqlHTTP from "koa-graphql"
-import schema from '../database/graphql.js'
+import schema from '../database/graphql'
 
 // routers
-import GraphqlRouter from '../router/router.js'
-import UserRouter from '../users/userRouter.js'
+import GraphqlRouter from '../public/router'
+import ProductRouter from '../products/productRouter'
+import UserRouter from '../users/userRouter'
+import SupplierRouter from '../suppliers/supplierRouter'
 
 // init http server, router
 const app = new Koa()
@@ -40,7 +42,9 @@ render(app, {
 
 // routing
 router.use('', GraphqlRouter.routes())
+router.use('', ProductRouter.routes())
 router.use('', UserRouter.routes())
+router.use('', SupplierRouter.routes())
 
 // graphql
 app.use(mount('/graphql', graphqlHTTP({
@@ -57,7 +61,7 @@ app.listen(port, console.log(`server running on port: ${port}`))
 
 // error
 app.on('error', err => {
-  log.error('server error', err)
+  console.log('server error', err)
 })
 
-// export default app
+export default app

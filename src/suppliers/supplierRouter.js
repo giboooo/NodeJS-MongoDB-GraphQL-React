@@ -1,7 +1,9 @@
-const router = require('koa-router')()
-const { saveUser, fetchUser } = require('./supplierController')
+import Router from 'koa-router'
+import { saveSupplier, fetchSupplier } from './supplierController'
+
+const router = new Router()
 
 router.post('/saveSupplier', saveSupplier)
 router.get('/supplier', fetchSupplier)
 
-module.exports = router
+export default router

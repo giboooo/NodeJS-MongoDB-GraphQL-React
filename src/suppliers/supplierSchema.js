@@ -1,4 +1,5 @@
 import mongoose from "mongoose"
+
 const Schema = mongoose.Schema
 
 const SupplierSchema = new Schema({
@@ -7,4 +8,4 @@ const SupplierSchema = new Schema({
 
 })
 
-mongoose.model('Supplier', SupplierSchema)
+export default mongoose.model('Supplier', SupplierSchema)

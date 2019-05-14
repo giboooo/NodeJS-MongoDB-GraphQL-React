@@ -1,9 +1,9 @@
 import mongoose from "mongoose"
 import config from "../config/index"
 
-require('../products/productSchema.js')
-require('../suppliers/supllierSchema.js')
-require('../users/userSchema.js')
+import '../products/productSchema'
+import '../suppliers/supplierSchema'
+import '../users/userSchema'
 
 const database = () => {
   mongoose.set('debug', true)
@@ -15,7 +15,7 @@ const database = () => {
   })
   
   mongoose.connection.on('error', err => {
-    console.error(err)
+    console.log('mongodb error', err)
   })
 
   mongoose.connection.on('open', async () => {

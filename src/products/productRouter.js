@@ -1,7 +1,9 @@
-const router = require('koa-router')()
-const { saveUser, fetchUser } = require('./productContorller')
+import Router from 'koa-router'
+import { saveProduct, fetchProduct } from './productContorller'
+
+const router = new Router()
 
 router.post('/saveProduct', saveProduct)
 router.get('/product', fetchProduct)
 
-module.exports = router
+export default router
