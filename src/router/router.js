@@ -1,4 +1,5 @@
-const router = require('koa-router')()
+import Router from 'koa-router'
+const router = new Router()
 
 // routes
 router.get('/', index)
@@ -29,4 +30,4 @@ async function admin(ctx){
   await ctx.render('admin')
 }
 
-module.exports = router
+export default router

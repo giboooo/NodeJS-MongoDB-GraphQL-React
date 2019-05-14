@@ -2,4 +2,5 @@ aa--dev/*
 node_modules/*
 .vscode/*
 
+.babelrc
 .eslintrc.js

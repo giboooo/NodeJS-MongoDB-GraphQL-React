@@ -1,21 +1,21 @@
-const Koa = require('koa')
-const bodyParser = require('koa-bodyparser')
-const render = require('koa-ejs') 
-const mount = require('koa-mount')
-const Router = require('koa-router')  
-const serve = require('koa-static')
-const path = require('path')
+import Koa from 'koa'
+import bodyParser from 'koa-bodyparser'
+import render from 'koa-ejs' 
+import mount from 'koa-mount'
+import Router from 'koa-router'  
+import serve from 'koa-static'
+import path from 'path'
 
 // database connexion
 require('../database/mongoose.js')
 
 // graphql
-const graphqlHTTP = require('koa-graphql')
-const schema = require('../database/graphql.js')
+import graphqlHTTP from "koa-graphql"
+import schema from '../database/graphql.js'
 
 // routers
-const GraphqlRouter = require('../router/router.js')
-const UserRouter = require('../users/userRouter.js')
+import GraphqlRouter from '../router/router.js'
+import UserRouter from '../users/userRouter.js'
 
 // init http server, router
 const app = new Koa()
@@ -59,3 +59,5 @@ app.listen(port, console.log(`server running on port: ${port}`))
 app.on('error', err => {
   log.error('server error', err)
 })
+
+// export default app

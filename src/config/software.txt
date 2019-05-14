@@ -1,8 +1,0 @@
-Materialize css framework
-  google fonts
-  fonts awesome
-
-nodejs npm 
-koa
-mongodb
-mongoose

@@ -1,23 +1,38 @@
-const { GraphQLSchema, GraphQLObjectType, GraphQLString} = require('graphql')
+const { GraphQLSchema, GraphQLObjectType, GraphQLString } = require('graphql')
 const userGraphQLType =  require('../users/userGraphql.js')
 const User = require('../users/userSchema.js')
 
-const RootQuery = new GraphQLObjectType({
-  name: 'RootQueryType',
-  fields: {
-    user: {
-      type: userGraphQLType,
-      args: { id: { type: GraphQLString }},
-      resolve(parent, args) {
-        return User.findById(args.id)
+export default new GraphQLSchema({
+  query: new GraphQLObjectType({
+    name: 'RootQuery',
+    fields: {
+      user: {
+        type: userGraphQLType,
+        args: { id: { type: GraphQLString }},
+        resolve(parent, args) {
+          return User.findById(args.id)
+        }
       }
     }
-  }
+  })
 })
 
-module.exports = new GraphQLSchema({
-  query: RootQuery
-})
+// const RootQuery = new GraphQLObjectType({
+//   name: 'RootQueryType',
+//   fields: {
+//     user: {
+//       type: userGraphQLType,
+//       args: { id: { type: GraphQLString }},
+//       resolve(parent, args) {
+//         return User.findById(args.id)
+//       }
+//     }
+//   }
+// })
+
+// module.exports = new GraphQLSchema({
+//   query: RootQuery
+// })
 
 
 

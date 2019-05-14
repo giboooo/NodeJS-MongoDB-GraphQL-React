@@ -1,5 +1,5 @@
-const mongoose = require('mongoose')
-const config = require('../config/index.js')
+import mongoose from "mongoose"
+import config from "../config/index"
 
 require('../products/productSchema.js')
 require('../suppliers/supllierSchema.js')
@@ -8,7 +8,7 @@ require('../users/userSchema.js')
 const database = () => {
   mongoose.set('debug', true)
 
-  mongoose.connect(config.dbPath, {useNewUrlParser: true}) // https://mongoosejs.com/docs/deprecations.html
+  mongoose.connect(config.dbPath, {useNewUrlParser: true})
 
   mongoose.connection.on('disconnected', () => {
     mongoose.connect(config.dbPath)
