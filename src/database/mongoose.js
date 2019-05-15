@@ -1,9 +1,9 @@
 import mongoose from "mongoose"
 import config from "../config/index"
 
-import '../products/productSchema'
-import '../suppliers/supplierSchema'
-import '../users/userSchema'
+import '../api/products/productSchema'
+import '../api/suppliers/supplierSchema'
+import '../api/users/userSchema'
 
 const database = () => {
   mongoose.set('debug', true)

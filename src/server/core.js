@@ -15,9 +15,9 @@ import schema from '../database/graphql'
 
 // routers
 import GraphqlRouter from '../public/router'
-import ProductRouter from '../products/productRouter'
-import UserRouter from '../users/userRouter'
-import SupplierRouter from '../suppliers/supplierRouter'
+import ProductRouter from '../api/products/productRouter'
+import UserRouter from '../api/users/userRouter'
+import SupplierRouter from '../api/suppliers/supplierRouter'
 
 // init http server, router
 const app = new Koa()

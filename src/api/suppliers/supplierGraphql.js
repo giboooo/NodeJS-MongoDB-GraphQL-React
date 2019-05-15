@@ -1,12 +1,13 @@
 import {
   GraphQLObjectType,
+  GraphQLID,
   GraphQLString
 } from 'graphql'
 
 export default new GraphQLObjectType({
-  name: 'User',
+  name: 'Supplier',
   fields: () => ({
-    id: { type: GraphQLString},
+    id: { type: GraphQLID},
     name: { type: GraphQLString},
     email: { type: GraphQLString}
   })

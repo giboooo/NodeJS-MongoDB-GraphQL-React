@@ -1,17 +1,17 @@
 import {
   GraphQLSchema,
   GraphQLObjectType,
-  GraphQLString
+  GraphQLID
 } from 'graphql'
 
-import Product from '../products/productSchema'
-import productType from '../products/productGraphql'
+import Product from '../api/products/productSchema'
+import productType from '../api/products/productGraphql'
 
-import User from '../users/userSchema'
-import userType from '../users/userGraphql'
+import User from '../api/users/userSchema'
+import userType from '../api/users/userGraphql'
 
-import Supplier from '../suppliers/supplierSchema'
-import supplierType from '../suppliers/supplierGraphql'
+import Supplier from '../api/suppliers/supplierSchema'
+import supplierType from '../api/suppliers/supplierGraphql'
 
 export default new GraphQLSchema({
   query: new GraphQLObjectType({
@@ -19,21 +19,21 @@ export default new GraphQLSchema({
     fields: {
       product: {
         type: productType,
-        args: { id: { type: GraphQLString }},
+        args: { id: { type: GraphQLID }},
         resolve(parent, args) {
           return Product.findById(args.id)
         }
       },
       user: {
         type: userType,
-        args: { id: { type: GraphQLString }},
+        args: { id: { type: GraphQLID }},
         resolve(parent, args) {
           return User.findById(args.id)
         }
       },
       supplier: {
         type: supplierType,
-        args: { id: { type: GraphQLString }},
+        args: { id: { type: GraphQLID }},
         resolve(parent, args) {
           return Supplier.findById(args.id)
         }

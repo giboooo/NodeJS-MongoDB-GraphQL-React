@@ -1,5 +1,6 @@
 import {
   GraphQLObjectType,
+  GraphQLID,
   GraphQLInt,
   GraphQLString
 } from 'graphql'
@@ -7,7 +8,7 @@ import {
 export default new GraphQLObjectType({
   name: 'Product',
   fields: () => ({
-    id: { type: GraphQLString},
+    id: { type: GraphQLID},
     name: { type: GraphQLString},
     price: { type: GraphQLInt}
   })

@@ -2,11 +2,23 @@
 First web app - graduation project 
 
 
+GraphQL:
+lodash
+type : graphQLID
+
+
+
+
+
+
+
+
 TODO
   docker
   cloud
   
   change the database name (test or graphql)
+  try catch
   auth process
   admin
   login (google + facebook)
