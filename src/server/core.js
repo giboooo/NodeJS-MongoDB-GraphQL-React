@@ -11,7 +11,8 @@ import '../database/mongoose'
 
 // graphql
 import graphqlHTTP from "koa-graphql"
-import schema from '../database/graphql'
+// import schema from '../database/graphql'
+import schema from '../database/gqlSchema'
 
 // routers
 import GraphqlRouter from '../public/router'

@@ -7,7 +7,7 @@ class Product {
     this.media = media
     this.price = price
     this.discount = discount // % percentage
-    this.offer = price - (price*dicount) // price after discount
+    this.offer = price - (price*discount) // price after discount
     this.economy = price - offer // gained economy 
   }
 
