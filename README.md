@@ -2,17 +2,6 @@
 First web app - graduation project 
 
 
-GraphQL:
-lodash
-type : graphQLID
-
-
-
-
-
-
-
-
 TODO
   docker
   cloud
@@ -24,6 +13,7 @@ TODO
   login (google + facebook)
   404
   singleton
+  test mocha
 
 
 ERRORS:

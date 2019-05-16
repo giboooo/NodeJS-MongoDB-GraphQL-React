@@ -1,16 +1,17 @@
 import {
   GraphQLSchema,
-  GraphQLObjectType,
-  GraphQLID
+  GraphQLID,
+  GraphQLList,
+  GraphQLObjectType
 } from 'graphql'
 
-import Product from '../api/products/productSchema'
+import product from '../api/products/productSchema'
 import productType from '../api/products/productGraphql'
 
-import User from '../api/users/userSchema'
+import user from '../api/users/userSchema'
 import userType from '../api/users/userGraphql'
 
-import Supplier from '../api/suppliers/supplierSchema'
+import supplier from '../api/suppliers/supplierSchema'
 import supplierType from '../api/suppliers/supplierGraphql'
 
 export default new GraphQLSchema({
@@ -21,21 +22,42 @@ export default new GraphQLSchema({
         type: productType,
         args: { id: { type: GraphQLID }},
         resolve(parent, args) {
-          return Product.findById(args.id)
+          return product.findById(args.id)
+        }
+      },
+      products: {
+        type: new GraphQLList(productType),
+        args: {},
+        resolve(root, params, options) {
+          return product.find({}).exec()
         }
       },
       user: {
         type: userType,
         args: { id: { type: GraphQLID }},
         resolve(parent, args) {
-          return User.findById(args.id)
+          return user.findById(args.id)
+        }
+      },
+      users: {
+        type: new GraphQLList(userType),
+        args: {},
+        resolve(root, params, options) {
+          return user.find({}).exec()
         }
       },
       supplier: {
         type: supplierType,
         args: { id: { type: GraphQLID }},
         resolve(parent, args) {
-          return Supplier.findById(args.id)
+          return supplier.findById(args.id)
+        }
+      },
+      suppliers: {
+        type: new GraphQLList(supplierType),
+        args: {},
+        resolve(root, params, options) {
+          return supplier.find({}).exec()
         }
       }
     }
