@@ -23,8 +23,7 @@ export default {
   resolve: (parent, args) => {
     return User.findByIdAndUpdate(
       args.id,
-      { $set: { name: args.name } },
-      // { $set: { email: args.email } },
+      { $set: { ...args } },
       { new: true }
     )
       .catch(err => new Error(err, 'error updating user'));

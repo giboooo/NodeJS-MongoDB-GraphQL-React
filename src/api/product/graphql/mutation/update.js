@@ -24,9 +24,7 @@ export default {
   resolve : (parent, args) => {
     return Product.findByIdAndUpdate(
       args.id,
-      { $set: { name: args.name } },
-      // { $set: { price: args.price } },
-      // { $set: { supllierid: args.supplierId } },
+      { $set: { ...args } },
       { new: true }
     )
       .catch(err => new Error(err, 'error updating product'));
