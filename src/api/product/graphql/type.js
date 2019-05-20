@@ -6,23 +6,23 @@ import {
   GraphQLString
 } from 'graphql'
 
-import supplierType from '../suppliers/supplierGraphql'
-import userType from '../users/userGraphql'
+import supplierType from '../../supplier/graphql/type'
+import userType from '../../user/graphql/type'
 
 export default new GraphQLObjectType({
   name: 'Product',
   fields: () => ({
     id: { type: GraphQLID},
-    name: { type: GraphQLString},          price: { type: GraphQLInt },
+    name: { type: GraphQLString},         price: { type: GraphQLInt },
     supplier: {
       type: supplierType,
-      resolve(parent, args) {
+      resolve: (parent, args) => {
         return parent.findById(args.id)
       }
     },
     users: {
       type: new GraphQLList(userType),
-      resolve(root, params, options) {
+      resolve: () => {
         return userType.find({}).populate({
           path: 'user',
           select: 'id name email'

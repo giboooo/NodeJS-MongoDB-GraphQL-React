@@ -1,10 +1,16 @@
 # hittheoffers
 First web app - graduation project 
 
+graphql:
+dataloader
+buildschema
+graphQLscalartype
+
 
 TODO
   docker
   cloud
+  security
   
   change the database name (test or graphql)
   try catch

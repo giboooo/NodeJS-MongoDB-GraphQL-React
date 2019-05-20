@@ -7,24 +7,23 @@ import serve from 'koa-static'
 import path from 'path'
 
 // database connexion
+import config from '../config/index'
 import '../database/mongoose'
 
 // graphql
 import graphqlHTTP from "koa-graphql"
-// import schema from '../database/graphql'
-import schema from '../database/gqlSchema'
+import schema from '../database/graphql/schema'
 
 // routers
-import GraphqlRouter from '../public/router'
-import ProductRouter from '../api/products/productRouter'
-import UserRouter from '../api/users/userRouter'
-import SupplierRouter from '../api/suppliers/supplierRouter'
+import PublicRouter from '../public/router'
+import ProductRouter from '../api/product/router'
+import UserRouter from '../api/user/router'
+import SupplierRouter from '../api/supplier/router'
 
 // init http server, router
 const app = new Koa()
 const router = new Router()
 
-const port = process.env.PORT || 4000
 
 // bodyparser middleware
 app.use(bodyParser())
@@ -42,10 +41,11 @@ render(app, {
 })
 
 // routing
-router.use('', GraphqlRouter.routes())
-router.use('', ProductRouter.routes())
-router.use('', UserRouter.routes())
-router.use('', SupplierRouter.routes())
+router
+  .use('', PublicRouter.routes())
+  .use('', ProductRouter.routes())
+  .use('', UserRouter.routes())
+  .use('', SupplierRouter.routes())
 
 // graphql
 app.use(mount('/graphql', graphqlHTTP({
@@ -54,11 +54,12 @@ app.use(mount('/graphql', graphqlHTTP({
 })))
 
 // router middleware
-app.use(router.routes())
-app.use(router.allowedMethods())
+app
+  .use(router.routes())
+  .use(router.allowedMethods())
 
 // server connexion
-app.listen(port, console.log(`server running on port: ${port}`))
+app.listen(config.port, console.log(`server running on port: ${config.port}`))
 
 // error
 app.on('error', err => {

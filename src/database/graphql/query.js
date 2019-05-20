@@ -1,8 +1,8 @@
 import { GraphQLObjectType } from 'graphql'
 
-import { productQuery, productsQuery } from '../api/products/productQuery'
-import { userQuery, usersQuery } from '../api/users/userQuery'
-import { supplierQuery, suppliersQuery } from '../api/suppliers/supplierQuery'
+import { productQuery, productsQuery } from '../../api/product/graphql/query'
+import { userQuery, usersQuery } from '../../api/user/graphql/query'
+import { supplierQuery, suppliersQuery } from '../../api/supplier/graphql/query'
 
 export default new GraphQLObjectType({
   name: 'RootQuery',
