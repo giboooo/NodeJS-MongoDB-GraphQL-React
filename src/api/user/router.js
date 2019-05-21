@@ -4,6 +4,6 @@ import { saveUser, fetchUser } from './userController'
 const router = new Router()
 
 router.post('/saveUser', saveUser)
-router.get('/user', fetchUser)
+router.get('/fetchUser', fetchUser)
 
 export default router

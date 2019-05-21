@@ -1,5 +1,24 @@
 
+
+
+
+
 // window.onload = () => {
+//   function renderUser(data) {
+//     let result = ''
+//     data.forEach(user => {
+//       result += `<li>name: ${user.name}, email: ${user.email}</li>`
+//     })
+//     $('#userList').html(result)
+//   }
+  
+//   function renderProduct(data) {
+//     let result = ''
+//     data.forEach(product => {
+//       result += `<li>name: ${product.name}, price: ${product.price}</li>`
+//     })
+//     $('#productList').html(result)
+//   }
 
 //   $('#btn1').click(() => {
 //     $.ajax({
@@ -26,52 +45,34 @@
 //     })
 //   })
 
-//   $('#btn3').click(() => {
-//     $.ajax({
-//       url: 'graphql',
-//       data: {
-//         query: `query{
-//           user{
-//             _id
-//             name
-//             email
-//           }
-//           product{
-//             name
-//             price
-//           }
-//           supplier{
-//             name
-//             email
-//           }
-//         }`
-//       },
-//       success: () => {
-//         renderUser(res.data.user)
-//         renderProduct(res.data.product)
-//       }
-//     })
-//   })
+  // $('#all').click(() => {
+  //   $.ajax({
+  //     url: 'admin',
+  //     data: {
+  //       query: `query{
+  //         user{
+  //           name
+  //           email
+  //         }
+  //         product{
+  //           name
+  //           price
+  //           supplierId
+  //         }
+  //         supplier{
+  //           name
+  //           email
+  //         }
+  //       }`
+  //     },
+  //     success: (res) => {
+  //       renderUser(res.data.user)
+  //       renderProduct(res.data.product)
+  //     }
+  //   })
+  // })
 
-//   function renderUser(data) {
-//     const result = ''
-//     data.forEach(user => {
-//       result += `<li>name: ${user.name}, email: ${user.email}</li>`
-//     })
-//     $('#userList').html(result)
-//   }
-
-//   function renderProduct(data) {
-//     let result = ''
-//     data.forEach(product => {
-//       result += `<li>name: ${product.name}, price: ${product.price}</li>`
-//     })
-//     $('#productList').html(result)
-//   }
 // }
-
-
-
 
 
 
