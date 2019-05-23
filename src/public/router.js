@@ -7,6 +7,7 @@ router.get('/admin', admin)
 router.get('/cart', cart)
 router.get('/menu', menu)
 router.get('/search', search)
+router.get('/admin2', admin2)
 
 // index function
 async function index(ctx){
@@ -28,6 +29,11 @@ async function menu(ctx){
 // admin function
 async function admin(ctx){
   await ctx.render('admin')
+}
+
+// client function
+async function admin2(ctx){
+  await ctx.render('admin2')
 }
 
 export default router

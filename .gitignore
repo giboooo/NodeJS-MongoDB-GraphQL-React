@@ -2,5 +2,7 @@ aa--dev/*
 node_modules/*
 .vscode/*
 
+client/*
+
 
 .eslintrc.js
