@@ -1,5 +1,6 @@
 import Koa from 'koa'
 import bodyParser from 'koa-bodyparser'
+import cors from '@koa/cors'
 import render from 'koa-ejs' 
 import mount from 'koa-mount'
 import Router from 'koa-router'  
@@ -30,6 +31,10 @@ app.use(bodyParser())
 
 // static files middleware
 app.use(serve('.'))
+
+// cross-origin requests middleware
+app.use(cors())
+
 
 // render -ejs
 render(app, {

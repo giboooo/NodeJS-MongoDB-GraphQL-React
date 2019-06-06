@@ -3,7 +3,7 @@ import {
   GraphQLList
 } from 'graphql'
 
-import product from '../schema'
+import Product from '../schema'
 import productType from './type'
 
 // fetch one
@@ -11,7 +11,7 @@ export const productQuery = {
   type: productType,
   args: { id: { type: GraphQLID }},
   resolve: (parent, args) => {
-    return product.findById(args.id)
+    return Product.findById(args.id)
   }
 }
 
@@ -20,7 +20,7 @@ export const productsQuery = {
   type: new GraphQLList(productType),
   args: {},
   resolve: async () => {
-    let products = await product.find()
+    let products = await Product.find()
     if (!products) throw new Error('error while fetching products')
     return products
   }

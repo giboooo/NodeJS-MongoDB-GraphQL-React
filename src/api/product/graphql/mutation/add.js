@@ -16,9 +16,17 @@ export default {
     supplierId: { type: new GraphQLNonNull(GraphQLID) }
   },
   resolve: async (parent, args)=> {
-    let uModel = new Product(args);
-    let newproduct = await uModel.save();
-    if (!newproduct) throw new Error('error adding product')
-    return newproduct
+    let uModel = new Product(args)
+    let newProduct = await uModel.save()
+    if (!newProduct) throw new Error('error adding product')
+    return newProduct
   }
+  // resolve(parent, args) {
+  //   let newProduct = new Product({
+  //     name: args.name,
+  //     price: args.price,
+  //     supplierId: args.supplierId
+  //   })
+  //   return newProduct.save()
+  // }
 }

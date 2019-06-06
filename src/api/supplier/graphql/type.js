@@ -5,6 +5,7 @@ import {
   GraphQLString
 } from 'graphql'
 
+import Product from '../../product/schema'
 import productType from '../../product/graphql/type'
 
 export default new GraphQLObjectType({
@@ -15,12 +16,9 @@ export default new GraphQLObjectType({
     email: { type: GraphQLString },
     products: {
       type: new GraphQLList(productType),
-      resolve: () => {
-        return productType.find({}).populate({
-            path: 'product',
-            select: 'name price'
-        }).exec()
-      }    
+      resolve(parent, args) {
+        return Product.find({ supplierId: parent.id })
+      }
     }
   })
 })

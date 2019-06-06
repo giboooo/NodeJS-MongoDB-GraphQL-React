@@ -26,6 +26,9 @@ ERRORS:
   on chrome:
   materialize.min.js:6 [Violation] Added non-passive event listener to a scroll-blocking 'touchstart' event. Consider marking event handler as 'passive' to make the page more responsive. See https://www.chromestatus.com/feature/5745543795965952
 
+  [Violation] Added non-passive event listener to a scroll-blocking <some> event. Consider marking event handler as 'passive' to make the page more responsive. See <URL>
+  [Violation] Forced reflow while executing JavaScript took 49ms
+
   on firefox: 
   Source map error: TypeError: NetworkError when attempting to fetch resource.
   Resource URL: moz-extension://44057ac1-5bd8-4cab-af62-d08c0c577047/node_modules/webextension-polyfill/dist/browser-polyfill.js
