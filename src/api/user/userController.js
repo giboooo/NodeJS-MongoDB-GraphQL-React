@@ -36,22 +36,3 @@ export const fetchUser = async (ctx) => {
     }
   }
 }
-
-
-// export const fetchStudentDetail = async (ctx, next) => {
-//   const students = await Student.find({}).populate({
-//     path: 'info',
-//     select: 'hobby height weight'
-//   }).exec()
-
-//   if (students.length) {
-//     ctx.body = {
-//       success: true,
-//       data: students
-//     }
-//   } else {
-//     ctx.body = {
-//       success: false
-//     }
-//   }
-// }

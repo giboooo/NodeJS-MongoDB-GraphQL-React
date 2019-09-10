@@ -1,22 +1,22 @@
 import Koa from 'koa'
 import bodyParser from 'koa-bodyparser'
-import cors from '@koa/cors'
 import render from 'koa-ejs' 
 import mount from 'koa-mount'
 import Router from 'koa-router'  
 import serve from 'koa-static'
 import path from 'path'
+import cors from '@koa/cors'
 
 // database connexion
 import config from '../config/index'
-import '../database/mongoose'
+import db from '../database/mongoose'
 
 // graphql
 import graphqlHTTP from "koa-graphql"
 import schema from '../database/graphql/schema'
 
 // routers
-import PublicRouter from '../public/router'
+import PublicRouter from './router'
 import ProductRouter from '../api/product/router'
 import UserRouter from '../api/user/router'
 import SupplierRouter from '../api/supplier/router'
@@ -25,8 +25,10 @@ import SupplierRouter from '../api/supplier/router'
 const app = new Koa()
 const router = new Router()
 
+// database connexion
+app.context.db = db()
 
-// bodyparser middleware
+// bodyparser middleware --->  { extended: false }
 app.use(bodyParser())
 
 // static files middleware
@@ -34,7 +36,6 @@ app.use(serve('.'))
 
 // cross-origin requests middleware
 app.use(cors())
-
 
 // render -ejs
 render(app, {
@@ -59,9 +60,7 @@ app.use(mount('/graphql', graphqlHTTP({
 })))
 
 // router middleware
-app
-  .use(router.routes())
-  .use(router.allowedMethods())
+app.use(router.routes()).use(router.allowedMethods())
 
 // server connexion
 app.listen(config.port, console.log(`server running on port: ${config.port}`))

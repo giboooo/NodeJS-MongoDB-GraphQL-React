@@ -4,7 +4,8 @@ const Schema = mongoose.Schema
 
 const UserSchema = new Schema({
   name: String,
-  email: String
+  email: String,
+  password: String
 })
 
 export default mongoose.model('User', UserSchema)

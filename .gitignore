@@ -1,9 +1,6 @@
-aa--dev/*
-node_modules/*
-.vscode/*
-
-src/client/*
-
+.vscode
+aa--dev
 node_modules
+img
 
-.eslintrc.js
+# client

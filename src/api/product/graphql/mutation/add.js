@@ -21,12 +21,4 @@ export default {
     if (!newProduct) throw new Error('error adding product')
     return newProduct
   }
-  // resolve(parent, args) {
-  //   let newProduct = new Product({
-  //     name: args.name,
-  //     price: args.price,
-  //     supplierId: args.supplierId
-  //   })
-  //   return newProduct.save()
-  // }
 }

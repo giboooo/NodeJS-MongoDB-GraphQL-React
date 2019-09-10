@@ -10,6 +10,7 @@ export default new GraphQLObjectType({
   fields: () => ({
     id: { type: GraphQLID },
     name: { type: GraphQLString },
-    email: { type: GraphQLString }
+    email: { type: GraphQLString },
+    password: { type: GraphQLString }
   })
 })

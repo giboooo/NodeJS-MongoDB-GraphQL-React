@@ -1,0 +1,74 @@
+<div class="row"></div>
+<!-- register /login -->
+<div class="row">
+  <a href="/register" class="col offset-s2 waves-effect waves-light btn-small">
+    <i class="material-icons right"></i>register
+  </a>
+  <a href="/login" class="col offset-s2 waves-effect waves-light btn-small">
+    <i class="material-icons right"></i>login
+  </a>
+</div>
+
+<% include ./partials/messages %>
+<form class="container" action="login" method="POST">
+    
+  <!-- email -->
+  <div class="row input-field col s12">
+    <label for="email">Email</label>
+    <input 
+      id="email"
+      type="email"
+      name="email"
+      value="<%= typeof email != 'undefined' ? email : '' %>"
+      class="validate"/>
+  </div>
+
+  <!-- password -->
+  <div class="row input-field col s12">
+    <label for="password">Password</label>
+    <input 
+      id="password" 
+      type="text" 
+      name="password"
+      value="<%= typeof password != 'undefined' ? password : '' %>"
+      class="validate"/>
+  </div>
+
+  <!-- keep me sign in -->
+  <div class="row">
+    <input type="checkbox"/>
+    <span>keep me sign in</span>        
+  </div>
+
+  <!-- remember me -->
+  <div class="row">
+    <input type="checkbox"/>
+    <span>remember me</span>
+  </div>
+
+  <!-- submit -->
+  <div class="row">
+    <button class="col s12 m12 l12 btn-large waves-effect waves-light" type="submit">sign in  
+      <i class="material-icons right">send</i>
+    </button>          
+  </div>
+  
+  <div class="row">
+    <div class="container">
+      
+      <!-- google signIn -->
+      <div class="row">
+        <a class="col offset-s2 waves-effect waves-light btn-small">
+          <i class="material-icons right">cloud</i>continue with google
+        </a>  
+      </div>
+
+      <!-- facebook signIn -->
+      <div class="row">
+        <a class="col offset-s2 waves-effect waves-light btn-small">
+          <i class="material-icons right">cloud</i>continue with facebook
+        </a>
+      </div>
+    </div>
+  </div>
+</form>

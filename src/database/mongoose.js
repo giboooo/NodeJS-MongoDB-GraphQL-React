@@ -5,7 +5,7 @@ import '../api/product/schema'
 import '../api/supplier/schema'
 import '../api/user/schema'
 
-const database = () => {
+export default function (){
   mongoose.set('debug', true)
 
   mongoose.connect(config.dbPath, {useNewUrlParser: true})
@@ -22,5 +22,3 @@ const database = () => {
     console.log('connected to mongodb', config.dbPath)
   })
 }
-
-database()

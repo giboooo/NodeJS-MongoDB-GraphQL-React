@@ -10,7 +10,8 @@ export default {
 type: userType,
   args: {
     name: { type: new GraphQLNonNull(GraphQLString) },
-    email: { type: new GraphQLNonNull(GraphQLString) }
+    email: { type: new GraphQLNonNull(GraphQLString) },
+    password: { type: new GraphQLNonNull(GraphQLString) }
   },
   resolve: async (parent, args) => {
     let uModel = new User(args);
